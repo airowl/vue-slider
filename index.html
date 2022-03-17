@@ -30,9 +30,9 @@
         <div class="container-fluid p-5">
             <div class="row text-center">
                 <div class="col-12 p-3" id="my-before-carousel">
-                    <div class="box">
+                    <div class="box active" v-for="element in carouselElements">
                         <div class="overlay"></div>
-                        <img src="img/1.jpg" alt="name Image" />
+                        <img :src="'img/' + element.image" alt="name Image" />
                         <div class="carousel-text">
                             <h3>Title</h3>
                             <p>Description</p>
