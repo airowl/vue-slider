@@ -27,6 +27,8 @@ const app = new Vue(
     {
         el: '#app',
         data: {
+            activeElement: 0,
+            
             carouselElements: [
                 {
                     image: "1.jpg",

@@ -30,12 +30,12 @@
         <div class="container-fluid p-5">
             <div class="row text-center">
                 <div class="col-12 p-3" id="my-before-carousel">
-                    <div class="box active" v-for="element in carouselElements">
+                    <div class="box" :class="(index == 0) ? 'active' : ''" v-for="(element, index) in carouselElements">
                         <div class="overlay"></div>
-                        <img :src="'img/' + element.image" alt="name Image" />
+                        <img :src="'img/' + element.image" :alt="element.title" />
                         <div class="carousel-text">
-                            <h3>Title</h3>
-                            <p>Description</p>
+                            <h3>{{element.title}}, {{index}}</h3>
+                            <p>{{element.description}}</p>
                         </div>
                     </div>
                 </div>
