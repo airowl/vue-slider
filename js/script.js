@@ -58,7 +58,14 @@ const app = new Vue(
             ]
         },
         methods: {
-            nex
+            nextThumb: function(){
+                if (this.activeElement == this.carouselElements.length - 1) {
+                    this.activeElement = 0;
+                } else {
+                    this.activeElement++;
+                }
+                console.log(this.carouselElements.length - 1);
+            }
         }
     }
 );

@@ -36,7 +36,8 @@
                 <div class="col-12 p-5">
                     <div class="my-carousel-container d-flex flex-column px-5" id="my-carousel">
                         <div class="my-carousel-images">
-                            <div class="box" :class="(index == 0) ? 'active' : ''" v-for="(element, index) in carouselElements">
+                            <div class="box" :class="(index ==
+                            activeElement) ? 'active' : ''" v-for="(element, index) in carouselElements">
                                 <div class="overlay"></div>
                                 <img :src="'img/' + element.image" :alt="element.title" />
                                 <div class="carousel-text">
@@ -46,14 +47,14 @@
                             </div>
                         </div>
                         <div class="my-thumbnails position-relative">
-                            <div class="thumbnails-img" :class="(index == 0) ? 'active-thumb' : ''" v-for="(element, index) in carouselElements">
+                            <div class="thumbnails-img" :class="(index == activeElement) ? 'active-thumb' : ''" v-for="(element, index) in carouselElements">
                                 <img :src="'img/' + element.image" :alt="element.title" />
                             </div>
                             <!-- prev -->
                             <div class="my-previous position-absolute" @click="">
                                 <span class="my-prev-hook"></span>
                             </div>
-                            <div class="my-next position-absolute" @click="">
+                            <div class="my-next position-absolute" @click="nextThumb()">
                                 <span class="my-next-hook"></span>
                             </div>
                         </div>
