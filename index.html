@@ -30,29 +30,30 @@
         <div class="container-fluid p-5">
             <div class="row text-center">
                 <div class="col-12 p-3" id="my-before-carousel">
-                    <div class="box" :class="(index == 0) ? 'active' : ''" v-for="(element, index) in carouselElements">
-                        <div class="overlay"></div>
-                        <img :src="'img/' + element.image" :alt="element.title" />
-                        <div class="carousel-text">
-                            <h3>{{element.title}}, {{index}}</h3>
-                            <p>{{element.description}}</p>
-                        </div>
-                    </div>
+                    
                 </div>
 
                 <div class="col-12 p-5">
                     <div class="my-carousel-container d-flex flex-column px-5" id="my-carousel">
                         <div class="my-carousel-images">
-                            <!-- immagini -->
+                            <div class="box" :class="(index == 0) ? 'active' : ''" v-for="(element, index) in carouselElements">
+                                <div class="overlay"></div>
+                                <img :src="'img/' + element.image" :alt="element.title" />
+                                <div class="carousel-text">
+                                    <h3>{{element.title}}, {{index}}</h3>
+                                    <p>{{element.description}}</p>
+                                </div>
+                            </div>
                         </div>
                         <div class="my-thumbnails position-relative">
+                            <div class="thumbnails-img" :class="(index == 0) ? 'active-thumb' : ''" v-for="(element, index) in carouselElements">
+                                <img :src="'img/' + element.image" :alt="element.title" />
+                            </div>
                             <!-- prev -->
-                            <div class="my-previous position-absolute">
+                            <div class="my-previous position-absolute" @click="">
                                 <span class="my-prev-hook"></span>
                             </div>
-                            <!-- immagini interne -->
-                            <!-- next -->
-                            <div class="my-next position-absolute">
+                            <div class="my-next position-absolute" @click="">
                                 <span class="my-next-hook"></span>
                             </div>
                         </div>
