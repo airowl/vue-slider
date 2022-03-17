@@ -28,6 +28,7 @@ const app = new Vue(
         el: '#app',
         data: {
             activeElement: 0,
+            autoPlayNext: null,
 
             carouselElements: [
                 {
@@ -74,6 +75,15 @@ const app = new Vue(
             },
             clickThumb: function(index){
                 this.activeElement = index;
+            },
+            autoPlay: function(){
+                this.autoPlayNext = setInterval(() =>{
+                    this.nextThumb();
+                }, 3000);
+            },
+            stopAutoPlay: function(){
+                clearInterval(this.autoPlayNext);
+                this.autoPlayNext = null;
             }
         }
     }

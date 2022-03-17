@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="col-12 p-5">
-                    <div class="my-carousel-container d-flex flex-column px-5" id="my-carousel">
+                    <div class="my-carousel-container d-flex flex-column px-5" id="my-carousel" @mouseleave="autoPlay()" @mouseover="stopAutoPlay()">
                         <div class="my-carousel-images">
                             <div class="box" :class="(index ==
                             activeElement) ? 'active' : ''" v-for="(element, index) in carouselElements">
