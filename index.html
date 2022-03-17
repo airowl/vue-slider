@@ -41,7 +41,7 @@
                                 <div class="overlay"></div>
                                 <img :src="'img/' + element.image" :alt="element.title" />
                                 <div class="carousel-text">
-                                    <h3>{{element.title}}, {{index}}</h3>
+                                    <h3>{{element.title}}</h3>
                                     <p>{{element.description}}</p>
                                 </div>
                             </div>
@@ -51,7 +51,7 @@
                                 <img :src="'img/' + element.image" :alt="element.title" />
                             </div>
                             <!-- prev -->
-                            <div class="my-previous position-absolute" @click="">
+                            <div class="my-previous position-absolute" @click="prevThumb()">
                                 <span class="my-prev-hook"></span>
                             </div>
                             <div class="my-next position-absolute" @click="nextThumb()">

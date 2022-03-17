@@ -65,6 +65,13 @@ const app = new Vue(
                     this.activeElement++;
                 }
                 console.log(this.carouselElements.length - 1);
+            },
+            prevThumb: function(){
+                if (this.activeElement == 0) {
+                    this.activeElement = this.carouselElements.length - 1;
+                } else {
+                    this.activeElement--;
+                }
             }
         }
     }
