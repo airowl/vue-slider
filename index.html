@@ -47,7 +47,7 @@
                             </div>
                         </div>
                         <div class="my-thumbnails position-relative">
-                            <div class="thumbnails-img" :class="(index == activeElement) ? 'active-thumb' : ''" v-for="(element, index) in carouselElements">
+                            <div class="thumbnails-img" :class="(index == activeElement) ? 'active-thumb' : ''" v-for="(element, index) in carouselElements" @click="clickThumb(index)">
                                 <img :src="'img/' + element.image" :alt="element.title" />
                             </div>
                             <!-- prev -->

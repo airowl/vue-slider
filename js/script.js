@@ -64,7 +64,6 @@ const app = new Vue(
                 } else {
                     this.activeElement++;
                 }
-                console.log(this.carouselElements.length - 1);
             },
             prevThumb: function(){
                 if (this.activeElement == 0) {
@@ -72,6 +71,9 @@ const app = new Vue(
                 } else {
                     this.activeElement--;
                 }
+            },
+            clickThumb: function(index){
+                this.activeElement = index;
             }
         }
     }
